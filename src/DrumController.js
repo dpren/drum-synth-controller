@@ -64,7 +64,7 @@ class DrumController extends Component {
       _.each(this.state.drums, (drum, drumName) => {
         _.each(drum, (element, elementName) => {
           const msgs = this.getOscMsgs(drumName, elementName);
-          this.max.sendOscMsgs(msgs);
+          // this.max.sendOscMsgs(msgs);
         })
       })
     });
@@ -130,13 +130,13 @@ class DrumController extends Component {
     const { h, w } = this.props;
     const elements = _.keys(drums[selectedDrum]);
 
+    // <Max
+    //   ref={this.handleMaxRef}
+    //   oscMsgs={this.getOscMsgs(selectedDrum, selectedElement)}
+    //   onConnectionChange={isConnected => this.setState({ isConnected })}
+    // />
     return (
       <div>
-        <Max
-          ref={this.handleMaxRef}
-          oscMsgs={this.getOscMsgs(selectedDrum, selectedElement)}
-          onConnectionChange={isConnected => this.setState({ isConnected })}
-        />
 
         {
           elements.map(name => {
