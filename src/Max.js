@@ -11,13 +11,14 @@ class Max extends Component {
 
     this.xebraState = new State({
       hostname: '192.168.1.37',
-      //hostname: '127.0.0.1',
+      // hostname: '127.0.0.1',
       // hostname: '10.30.87.25',
       port: 8086,
       supported_objects: SUPPORTED_OBJECTS
     });
 
-    this.xebraState.connect();
+    // Disabled for web demo
+    // this.xebraState.connect();
 
     this.xebraState.on("connection_changed", status => {
       //   INIT: 1,
